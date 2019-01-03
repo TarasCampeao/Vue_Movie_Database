@@ -1,12 +1,15 @@
 <template>
-	<div class="container">
+	<div class="main-block container">
 		<h1>Movie List</h1>
-		<ul>
+		<ul class="film_list">
 			<li v-for="item in items.results" :key="item.id">
-				<div class="img_size">
+				<div class="film_poster img_size">
 					<img :src="imageUrl + item.poster_path" alt=""/>
 				</div>
-				<div class="desc_item">{{ item.overview }}</div>
+				<div class="about_film">
+					<h2>{{ item.title }} ({{ item.release_date | sliceDate }})</h2>
+					<div class="desc_item">{{ item.overview }}</div>
+				</div>
 			</li>
 		</ul>
 	</div>
@@ -36,6 +39,11 @@ export default {
                 this.loaded = false;
             });
         }
+    },
+    filters: {
+    	sliceDate(value) {
+    		return `${value.slice(0, 4)}`
+    	}
     }
 }
 
