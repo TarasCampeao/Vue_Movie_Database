@@ -9,6 +9,7 @@
 				<div class="about_film">
 					<h2>{{ item.title }} ({{ item.release_date | sliceDate }})</h2>
 					<div class="desc_item">{{ item.overview }}</div>
+					<a href="/" class="more_btn tc">Read more</a>
 				</div>
 			</li>
 		</ul>
