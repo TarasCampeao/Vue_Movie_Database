@@ -2,14 +2,14 @@
 	<div class="main-block container">
 		<h1>Movie List</h1>
 		<ul class="film_list">
-			<li v-for="item in items.results" :key="item.id">
+			<li v-for="(item, index) in items.results" :key="item.id">
 				<div class="film_poster img_size">
 					<img :src="imageUrl + item.poster_path" alt=""/>
 				</div>
 				<div class="about_film">
 					<h2>{{ item.title }} ({{ item.release_date | sliceDate }})</h2>
 					<div class="desc_item">{{ item.overview }}</div>
-					<a href="/" class="more_btn tc">Read more</a>
+					<router-link class="more_btn tc" :to="{ name: 'item', params: { id: index }, query: {id: item.id } }">Read more</router-link>
 				</div>
 			</li>
 		</ul>
@@ -18,9 +18,13 @@
 
 
 <script>
+import MovieDetail from '../components/MovieDetail.vue'
 
 export default {
 	name: 'MovieList',
+	components: {
+		MovieDetail,
+	},
 	data() {
 		return {
 			items: [],

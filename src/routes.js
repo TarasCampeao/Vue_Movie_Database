@@ -7,8 +7,8 @@ import ErrorPage from './components/ErrorPage.vue'
 export default new VueRouter ({
 	mode: 'history',
 	routes: [
-		{path: '/', component: MovieList },
-		{path: '/detail/:id', name: 'item', component: MovieDetail },
-		{path: '*', component: ErrorPage }
+		{path: '/', component: MovieList},
+		{path: '/detail/:id', name: 'item', component: MovieDetail},
+		{path: '*', component: ErrorPage}
 	]
 })

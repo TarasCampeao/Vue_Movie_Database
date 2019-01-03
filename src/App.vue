@@ -5,18 +5,19 @@
 </style>
 <template>
   <div id="app">
-    <movie-list></movie-list>
+    <!-- <movie-list></movie-list> -->
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import MovieList from './components/MovieList'
+//import MovieList from './components/MovieList'
 
 export default {
-  name: 'app',
-  components: {
-  	MovieList,
-  },
+  name: 'App',
+  // components: {
+  // 	MovieList,
+  // },
 }
 
 </script>
